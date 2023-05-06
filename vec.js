@@ -56,11 +56,11 @@ class Vec {
   }
   
   powNum(num) {
-    return this.forEach((l, v, i) => num ** v);
+    return this.forEach((l, v, i) => v ** num);
   }
   
   numPow(num) {
-    return this.forEach((l, v, i) => v ** num);
+    return this.forEach((l, v, i) => num ** v);
   }
   
   flip() {
