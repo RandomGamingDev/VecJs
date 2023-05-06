@@ -31,6 +31,18 @@ class Vec {
     return this.forEach((l, v, i) => Math.abs(v));
   }
   
+  floor() {
+    return this.forEach((l, v, i) => Math.floor(v));
+  }
+  
+  ceil() {
+    return this.forEach((l, v, i) => Math.ceil(v));
+  }
+  
+  round() {
+    return this.forEach((l, v, i) => Math.round(v));
+  }
+  
   addNum(num) {
     return this.forEach((l, v, i) => v + num);
   }
