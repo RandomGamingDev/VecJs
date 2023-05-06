@@ -89,11 +89,11 @@ class Vec {
   }
   
   copy() {
-    return Vec.fromList([...this.val]);
+    return Vec.fromList([...this.list]);
   }
   
   slice(start, end) {
-    return Vec.fromList(this.val.slice(start, end));
+    return Vec.fromList(this.list.slice(start, end));
   }
     
   miniVec(i, length) {
