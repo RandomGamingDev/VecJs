@@ -55,6 +55,14 @@ class Vec {
     return this.forEach((l, v, i) => num / v);
   }
   
+  powNum(num) {
+    return this.forEach((l, v, i) => num ** v);
+  }
+  
+  numPow(num) {
+    return this.forEach((l, v, i) => v ** num);
+  }
+  
   flip() {
     return this.mulMono(-1);
   }
@@ -77,6 +85,10 @@ class Vec {
   
   divVec(vec) {
     return this.forEach((l, v, i) => v / vec.ind(i));
+  }
+  
+  powVec(vec) {
+    return this.forEach((l, v, i) => v ** vec.ind(i));
   }
   
   equ(vec) {
