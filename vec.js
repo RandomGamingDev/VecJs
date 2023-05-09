@@ -17,6 +17,11 @@ class Vec {
     return this.list[i];
   }
   
+  setInd(i, num) {
+    this.list[i] = num;
+    return this;
+  }
+  
   length() {
     return this.list.length;
   }
