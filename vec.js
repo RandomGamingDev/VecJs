@@ -81,11 +81,11 @@ class Vec {
   }
   
   flip() {
-    return this.mulMono(-1);
+    return this.mulNum(-1);
   }
   
   inv() {
-    return this.monoDiv(1);
+    return this.numDiv(1);
   }
   
   addVec(vec) {
