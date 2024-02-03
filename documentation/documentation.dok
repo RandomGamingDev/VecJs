@@ -1,0 +1,114 @@
+~
+  "title": "VecJs",
+  "description": "A javascript library for dynamic vectors (e.g. vec2 & vec3) based on lists",
+  "libraries": ["https://cdn.jsdelivr.net/gh/RandomGamingDev/BasicUnitTesterJs/unit-tester.js", "https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.5/ace.js", "https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/documentation/logger-lib.js", "https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/vec.js"],
+  "scripts": ["https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/documentation/editor.js"]
+~
+
+@ What's VecJs?
+# What's VecJs?
+### A javascript library for dynamic vectors (e.g. vec2 & vec3) based on lists.
+This library interally deals with a vector (e.g. vec2 & vec3) as a list which can be obtained from Vec.list.
+This is nice for dealing with libraries that use list vectors (including mine :D) without having to do any annoying casting,
+with u instead being able simply do Vec.list to get the internal list.
+Not only that, but the fact that lists are used interally means that operations can be done on directly and that the class can be a lot more flexible.
+If you want you can even replace the interal list with a Uint32Array for example to be extra blazing fast in your application
+(although I wouldn't recommend overoptimization ofc).
+
+### To use it, you can simply import it as a cdn from https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/vec.js (add .min before .js for the minified version), import into your project, or copy and paste `vec.js` into your editor!
+
+@ Quickstart
+# Quickstart
+
+In order to start testing, you'll want to know how to use the library first! <br/>
+To do that you'll have to initialize a vector in the form of the `Vec` class!
+```
+// This initializes a vector of length 3 filled with 0
+const vec = new Vec(3);
+// This initializes a vector of length 2 filled with 1
+const mono_vec = Vec.mono(1, 2);
+// This initializes a vector of length 3 filled with the values 1, 2, 3
+const from_list_vec = Vec.fromList([1, 2, 3]);
+```
+
+Now that you've created the Vec class you can start using it to do vector operations (these are documented in the documentation for the `Vec` class)!
+```
+// For instance, you can use it for physics calculations!
+const acc = Vec.fromList([1, 2]);
+const vel = new Vec(2);
+
+// Here we add the acceleration to the velocity
+vel.addVec(acc);
+
+// Here you can take a look at the internal list and thus the end result
+console.log(vel.list);
+
+// And you can get each individual part of the vector like this:
+// x
+console.log(vel.ind(0));
+// y
+console.log(vel.ind(1));
+```
+
+Another great thing is that since everything is managed with a list it's easy to interact with other libraries!
+```
+// If the function takes in a list you can do this
+some_random_function(vec.list);
+// If the function takes in multiple parameters for say x, y, and z you can do this
+some_other_random_function(...vec.list);
+```
+
+### If you'd like to try out using this library before importing it, you can edit the unit test for this in the Unit Test section
+
+@ class Vec
+# class Vec
+
+## Constructor: This creates a vector filled with 0 of size length
+- length: Integer,
+
+## Fields
+- #### list: Number[] = The internal list and core datastructure for storing the data
+
+## Non-Static Methods
+- #### ind(i: Integer): Gets the value of index `index` from the vector starting from 0 which stands for x
+- #### setInd(i: Integer): Set the value of index `index` for the vector starting from 0 which stands for x
+- #### length(): Returns the length of the vector
+- #### forEach(func: function): Calls a function for every element in the vector with the parameters (list, element, index)
+- #### abs(): Absolute value's every element of the vector
+- #### floor(): Floor's every element of the vector
+- #### ceil(): Ceil's every element of the vector
+- #### round(): Round's every element of the vector
+- #### addNum(num: Number): Adds `num` to every element of the vector
+- #### subNum(num: Number): Subtracts `num` from every element of the vector
+- #### numSub(num: Number): Subtracts each element of the vector from `num` for each element's new value
+- #### mulNum(num: Number): Multiplies every element of the vector by `num`
+- #### divNum(num: Number): Divides every element of the vector by `num`
+- #### numDiv(num: Number): Divides `num` by each element of the vector for each element's new value
+- #### powNum(num: Number): Brings every element of the vector to the power of `num`
+- #### numPow(num: Number): Brings `num` to the power of each element of the vector for each element's new value
+- #### flip(): Flips the sign of every element of the vector
+- #### inv(): Gets the reciprocal of every element of the vector
+- #### addVec(vec: Vec): This adds each element of `vec` to the corresponding element in the vector this method is called from
+- #### subVec(vec: Vec): This subtracts each element of `vec` to the corresponding element in the vector this method is called from
+- #### mulVec(vec: Vec): This multiplies each element of `vec` to the corresponding element in the vector this method is called from
+- #### divVec(vec: Vec): This divides each element of `vec` to the corresponding element in the vector this method is called from
+- #### powVec(vec: Vec): This brings each element of the vector this method is called from to the power of the corresponding element of `vec`
+- #### equ(vec: Vec): This checks whether or not 2 vectors are equal in value
+- #### copy(): This copies the vector
+- #### slice(start, end): This creates a new vector from a copied slice that starts at `start` (inclusive) and ends at `end` (exclusive)
+- #### miniVec(i, length): This creates a new vector from a copied slice that starts at `i` and every `length` after to create a new vector of length `length`
+
+## Static Methods
+- #### fromList(list: Number[]): This creates a new Vector surrounding the `list` given which means that any modifications that happen to the vector will happen to the list and vice versa
+- #### mono(num, length): This creates a new Vector filled with `num` of length `length`
+
+@ Unit Test
+# Unit Test
+
+Here's a unit test for the unit tester using itself (feel free to edit and mess around with it)
+
+<button id="exec-button"></button>
+<div id="editor" style="height: 50em">Loading the Unit Test...</div>
+
+Console (the results can be seen in the Inspect Element console as well): 
+<div id="fake-console"></div>
