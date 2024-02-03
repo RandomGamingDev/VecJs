@@ -96,7 +96,7 @@ const test = new UnitTester("Vec Initialization", "",
 ).test();
 
 if (test.failed_sub_tests.length == 0)
-  console.log("Everything was completely successfully!");
+  console.log("Everything was completed successfully!");
 else {
   console.log("Failed Tests:");
   console.log(tests.failed_sub_tests);
