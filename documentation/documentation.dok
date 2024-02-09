@@ -15,7 +15,7 @@ Not only that, but the fact that lists are used interally means that operations 
 If you want you can even replace the interal list with a Uint32Array for example to be extra blazing fast in your application
 (although I wouldn't recommend overoptimization ofc).
 
-### To use it, you can simply import it as a cdn from https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/vec.js (add .min before .js for the minified version), import into your project, or copy and paste `vec.js` into your editor!
+### To use it, you can simply import it as a cdn from https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs@8b6cbf7f851fd0ba1a11f602031a2b2e06c3fecb/vec.js (add .min before .js for the minified version), import into your project, or copy and paste `vec.js` into your editor!
 
 @ Quickstart
 # Quickstart

@@ -5,6 +5,6 @@ This library interally deals with a vector (e.g. vec2 & vec3) as a list which ca
 
 The documentation and unit test can be found here: https://randomgamingdev.github.io/EzDok/#v1/%22https://raw.githubusercontent.com/RandomGamingDev/VecJs/main/documentation/documentation.dok%22/0/
 
-To use it you can simply include https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs/vec.js in your HTML file (put .min before .js if you want the minified version)! If you want to you can also just download the file and include it in your HTML file that way.
+To use it you can simply include https://cdn.jsdelivr.net/gh/RandomGamingDev/VecJs@8b6cbf7f851fd0ba1a11f602031a2b2e06c3fecb/vec.js in your HTML file (put .min before .js if you want the minified version)! If you want to you can also just download the file and include it in your HTML file that way.
 
 btw stuff updates so remember to specify a version/commit for your library if you want to use a link and don't want your code to automatically update to the newest version of the library
